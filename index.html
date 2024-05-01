@@ -28,7 +28,7 @@
 					<p class = "intro-phrase">
 						<span>Hello, I'm</span>
 						<span>Pamela Anne Serrano</span>
-						<span>22 years old <span class = "divider">|</span> She / Her</span>
+						<span><span id = "age"></span> years old <span class = "divider">|</span> She / Her</span>
 						<span>Computer Science and Digital Game Design and Development student at the Ateneo</span>
 					</p>
 				</div>
@@ -143,5 +143,18 @@
 				<p class = "description">Some life events that remind me of how rewarding life is in spite of the difficulties I face</p>
 			</section>
 		</div>
+		<script>
+			var age = document.getElementById("age");
+			var currentDate = new Date();
+			var birthdate = new Date(2000, 10, 5);
+			if ((currentDate.getMonth() > birthdate.getMonth()) || ((currentDate.getMonth() == birthdate.getMonth()) && (currentDate.getDate() >= birthdate.getDate())))
+			{
+				age.innerHTML = currentDate.getFullYear() - birthdate.getFullYear();
+			}
+			else
+			{
+				age.innerHTML = currentDate.getFullYear() - birthdate.getFullYear() - 1;
+			}
+		</script>
 	</body>
 </html> 
